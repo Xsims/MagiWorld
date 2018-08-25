@@ -1,24 +1,25 @@
 package com.ocr.simon.classe;
 
 public class Rodeur extends Personnage {
-    private String nom;
 
-    public Rodeur(int niveau, int force, int intelligence, int agilite) {
-        super(niveau, force, intelligence, agilite);
+
+    public Rodeur(int niveau, int force, int intelligence, int agilite, String nom) {
+        super(niveau, force, intelligence, agilite, nom);
+
         System.out.println(".... !!! je suis un rodeur de niveau " + niveau +
                 " avec " + this.getVitalite() + " de vitalité");
     }
 
-    public void AttaqueBasique(Personnage personnage){
+    public void attaqueBasique(Personnage personnage){
         personnage.setVitalite(personnage.vitalite - this.getAgilite());
-        System.out.println();
+
+        System.out.println(this.getNom() + " inflige " + this.getAgilite() + " points de dommage à " + personnage.getNom() +
+        "\n " + personnage.getNom() + " perd " + this.getAgilite() + " points de vitalité");
     }
 
 
-    public void AttaqueSpeciale(Personnage personnage) {
+    public void attaqueSpeciale(Personnage personnage) {
 
     }
-
-
 
 }

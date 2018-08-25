@@ -15,7 +15,7 @@ public class Game {
 
 
 
-    public Personnage creation(){
+    public Personnage creation(String nom){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier, 2: Rôdeur, 3: Mage)");
@@ -32,15 +32,15 @@ public class Game {
 
         switch (classe) {
             case 1:
-                Personnage guerrier = new Guerrier(lvl, force, intell, agi);
+                Personnage guerrier = new Guerrier(lvl, force, intell, agi, nom);
                 perso = guerrier;
                 break;
             case 2:
-                Personnage rodeur = new Rodeur(lvl, force, intell, agi);
+                Personnage rodeur = new Rodeur(lvl, force, intell, agi, nom);
                 perso = rodeur;
                 break;
             case 3:
-                Personnage mage = new Mage(lvl, force, intell, agi);
+                Personnage mage = new Mage(lvl, force, intell, agi, nom);
                 perso = mage;
                 break;
             default:
