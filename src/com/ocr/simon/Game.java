@@ -13,22 +13,32 @@ public class Game {
     public Game() {
     }
 
-
-
     public Personnage creation(String nom){
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier, 2: Rôdeur, 3: Mage)");
-        int classe = scanner.nextInt();
-        System.out.println("Niveau du personnage ?");
-        int lvl = scanner.nextInt();
-        System.out.println("Force du personnage ?");
-        int force = scanner.nextInt();
-        System.out.println("Intelligence du personnage ?");
-        int intell = scanner.nextInt();
-        System.out.println("Agilité du personnage ?");
-        int agi = scanner.nextInt();
+        int classe = -1;
+        int lvl = -1;
+        int force = -1;
+        int intell = -1;
+        int agi = -1;
+
         Personnage perso = null;
+
+        Scanner scanner = new Scanner(System.in);
+        while(classe < 1 || classe > 3) {
+        System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier, 2: Rôdeur, 3: Mage)");
+        classe = scanner.nextInt(); }
+        while(lvl < 1){
+        System.out.println("Niveau du personnage ?");
+        lvl = scanner.nextInt();}
+        while(force < 0){
+        System.out.println("Force du personnage ?");
+        force = scanner.nextInt();}
+        while(intell < 0){
+        System.out.println("Intelligence du personnage ?");
+        intell = scanner.nextInt();}
+        while(agi < 0){
+        System.out.println("Agilité du personnage ?");
+        agi = scanner.nextInt();}
 
         switch (classe) {
             case 1:
@@ -46,9 +56,26 @@ public class Game {
             default:
                 System.out.println("Mauvais choix, veuillez réessayer");
         }
-
         return perso;
-
     }
 
+    public void combat(Personnage joueurAttaquant, Personnage joueurAttaque){
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(joueurAttaquant.getNom() + " (" + joueurAttaquant.getVitalite()+ " vitalité) veuillez choisir votre action ( 1: Attaque Basique" +
+                    " 2: Attaque Speciale");
+
+            int typeAttaque = scanner.nextInt();
+
+            switch (typeAttaque) {
+                case 1:
+                    joueurAttaquant.attaqueBasique(joueurAttaque);
+                    break;
+                case 2:
+                    joueurAttaquant.attaqueSpeciale(joueurAttaque);
+                    break;
+                default:
+            }
+
+    }
 }

@@ -13,50 +13,49 @@ public class Main {
         // write your code here
         String j1 = "Joueur 1";
         String j2 = "Joueur 2";
+        int matchTermine = 1;
+
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bienvenue à MagiWorld ! Un monde sanginaire où guerrier, rôdeur et magicien" +
                 "s'affronte pour dominer le monde ! \n ");
 
         Game game = new Game();
-        System.out.println("Création du personnage du Joueur 1");
+        System.out.println("Création du personnage du Joueur 1" +
+                "\nQuel est votre nom ?");
+        j1 = scanner.nextLine();
         Personnage joueur1 = game.creation(j1);
-        System.out.println("Création du personnage du Joueur 2");
+        System.out.println("Création du personnage du Joueur 2" +
+                "\nQuel est votre nom ?");
+        j2 = scanner.nextLine();
         Personnage joueur2 = game.creation(j2);
 
-        while(joueur1.getVitalite() > 0 || joueur2.getVitalite() > 0) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println(joueur1.getNom() + " (" + joueur1.getVitalite()+ " vitalité) veuillez choisir votre action ( 1: Attaque Basique" +
-                    " 2: Attaque Speciale");
+        while(matchTermine == 1) {
 
-            int typeAttaque = scanner.nextInt();
-
-            switch (typeAttaque) {
-                case 1:
-                    joueur1.attaqueBasique(joueur2);
-                    break;
-                case 2:
-                    joueur1.attaqueSpeciale(joueur2);
-                    break;
-                default:
+            if (joueur1.getVitalite() < 1) {
+                System.out.println(joueur1.getNom() + " est mort ");
+                matchTermine = 0;
             }
-            System.out.println(joueur2.getNom() + " (" + joueur2.getVitalite()+ " vitalité) veuillez choisir votre action ( 1: Attaque Basique" +
-                    " 2: Attaque Speciale");
+            else if(matchTermine == 0) {
+                System.out.println("Le combat est terminé");
+            }
+            else {
+                game.combat(joueur1, joueur2);
+            }
 
-            typeAttaque = scanner.nextInt();
-
-            switch (typeAttaque) {
-                case 1:
-                    joueur2.attaqueBasique(joueur1);
-                    break;
-                case 2:
-                    joueur2.attaqueSpeciale(joueur1);
-                    break;
-                default:
+            if (joueur2.getVitalite() < 1) {
+                System.out.println(joueur2.getNom() + " est mort ");
+                matchTermine = 0;
+                System.out.println("Le combat est terminé");
+            }
+            else if(matchTermine == 0) {
+                System.out.println("Le combat est terminé");
+            }
+            else {
+                game.combat(joueur2, joueur1);
             }
 
         }
-
-        System.out.println("Le combat est terminé");
 
 
     }
