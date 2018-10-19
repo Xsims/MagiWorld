@@ -3,7 +3,7 @@ package com.ocr.simon.classe;
 /**
  * The type Personnage.
  */
-public class Personnage {
+public abstract class Personnage {
 
     int niveau = 0;
     int vitalite = 0;
@@ -12,10 +12,6 @@ public class Personnage {
     int agilite = 0;
 
     String nom;
-
-    public Personnage(){
-
-    }
 
     /**
      * @param niveau
@@ -37,16 +33,13 @@ public class Personnage {
      *
      * @param victime
      */
-    public void attaqueBasique(Personnage victime){
-    }
+    public abstract void attaqueBasique(Personnage victime);
 
     /**
      *
      * @param victime
      */
-    public void attaqueSpeciale(Personnage victime) {
-
-    }
+    public abstract void attaqueSpeciale(Personnage victime);
 
     /**
      *
