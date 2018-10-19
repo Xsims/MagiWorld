@@ -1,19 +1,17 @@
 package com.ocr.simon;
 
-import com.ocr.simon.classe.Guerrier;
-import com.ocr.simon.classe.Mage;
+
 import com.ocr.simon.classe.Personnage;
-import com.ocr.simon.classe.Rodeur;
 
-import java.lang.reflect.Field;
-import java.util.Scanner;
 
-public class Game {
+
+
+class Game {
 
 
 
     // Le constructeur lance une partie à chaque instanciation
-    public Game() {
+    Game() {
         System.out.println("Bienvenue à MagiWorld ! Un monde sanginaire où guerrier, rôdeur et magicien" +
                 "s'affronte pour dominer le monde ! \n ");
 
@@ -41,7 +39,7 @@ public class Game {
      * @param joueur - nom du Joueur qui configure son personnage
      * @return Personnage
      */
-    public Personnage configure(String joueur){
+    private Personnage configure(String joueur){
         Initialisation initialisation = new Initialisation();
         joueur = initialisation.demanderNom(joueur);
         initialisation.demandeCaracJoueur();
@@ -58,7 +56,7 @@ public class Game {
      * @param joueur2 - Personnage du joueur 1
      * @return winner - Le nom du gagnant de cette bataille
      */
-    public String combatAMort(Personnage joueur1, Personnage joueur2) {
+    private String combatAMort(Personnage joueur1, Personnage joueur2) {
         int matchTermine = 1;
         String winner = "";
         Combat attaque = new Combat();
@@ -69,8 +67,6 @@ public class Game {
                 System.out.println(joueur1.getNom() + " est mort \n");
                 winner = joueur2.getNom();
                 matchTermine = 0;
-            } else if (matchTermine == 0) {
-                System.out.println("Le combat est terminé\n");
             } else {
                 attaque.combat(joueur1, joueur2);
             }

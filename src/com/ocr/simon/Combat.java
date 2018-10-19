@@ -4,15 +4,15 @@ import com.ocr.simon.classe.Personnage;
 
 import java.util.Scanner;
 
-public class Combat {
+class Combat {
 
     /**
      * Méthode appelée à chaque tour pour attaquer
      *
-     * @param joueurAttaquant
-     * @param joueurAttaque
+     * @param joueurAttaquant - Attaquant
+     * @param joueurAttaque - Defenseur
      */
-    public void combat(Personnage joueurAttaquant, Personnage joueurAttaque){
+    void combat(Personnage joueurAttaquant, Personnage joueurAttaque){
 
         //Demande le type d'attaque
         Scanner scanner = new Scanner(System.in);

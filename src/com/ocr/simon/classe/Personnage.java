@@ -5,22 +5,22 @@ package com.ocr.simon.classe;
  */
 public abstract class Personnage {
 
-    int niveau = 0;
-    int vitalite = 0;
-    int force = 0;
-    int intelligence = 0;
-    int agilite = 0;
+    private int niveau;
+    int vitalite;
+    private int force;
+    private int intelligence;
+    int agilite;
 
-    String nom;
+    private String nom;
 
     /**
-     * @param niveau
-     * @param force
-     * @param intelligence
-     * @param agilite
-     * @param nom
+     * @param niveau - le niveau du personnage
+     * @param force - la force du personnage
+     * @param intelligence - l'intelligence du personnage
+     * @param agilite - l'agilité du personnage
+     * @param nom - le nom du personnage
      */
-    public Personnage(int niveau, int force, int intelligence, int agilite, String nom) {
+    Personnage(int niveau, int force, int intelligence, int agilite, String nom) {
         this.niveau = niveau;
         this.vitalite = niveau*5;
         this.force = force;
@@ -44,7 +44,7 @@ public abstract class Personnage {
      *Mage : soigne jusqu'à 2xintelligence
      *Rodeur : gagne son niveau divisé par 2 en agilité.
      *
-     * @param victime
+     * @param victime - il
      */
     public abstract void attaqueSpeciale(Personnage victime);
 
@@ -60,7 +60,7 @@ public abstract class Personnage {
      *
      * @return le niveau du personnage
      */
-    public int getNiveau() {
+    int getNiveau() {
         return niveau;
     }
 
@@ -77,7 +77,7 @@ public abstract class Personnage {
      *
      * @return la force
      */
-    public int getForce() {
+    int getForce() {
         return force;
     }
 
@@ -87,7 +87,7 @@ public abstract class Personnage {
      *
      * @return l'intelligence
      */
-    public int getIntelligence() {
+    int getIntelligence() {
         return intelligence;
     }
 
@@ -96,25 +96,17 @@ public abstract class Personnage {
      *
      * @return l'agilité
      */
-    public int getAgilite() {
+    int getAgilite() {
         return agilite;
     }
 
-    /**
-     * Sets niveau.
-     *
-     * @param niveau
-     */
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
-    }
 
     /**
      * Sets vitalite.
      *
-     * @param vitalite
+     * @param vitalite  - la vitalité du personnage
      */
-    public void setVitalite(int vitalite) {
+    void setVitalite(int vitalite) {
         this.vitalite = vitalite;
     }
 }

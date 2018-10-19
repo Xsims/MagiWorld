@@ -1,7 +1,5 @@
 package com.ocr.simon;
 
-import com.ocr.simon.classe.*;
-
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +11,7 @@ public class Main {
 
         // Relance le jeu jusqu'à que le joueur décide de quitter
         while(continuer == 1) {
-            Game game = new Game();
+            new Game();
 
             continuer = -1;
             Scanner scanner = new Scanner(System.in);

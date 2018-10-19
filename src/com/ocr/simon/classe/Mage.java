@@ -36,7 +36,7 @@ public class Mage extends Personnage {
     /**
      *Mage : soigne jusqu'à 2xintelligence
      *
-     * @param victime
+     * @param victime qui va se prendre les dommages de l'attaque
      */
     public void attaqueSpeciale(Personnage victime) {
         int soin = 0;

@@ -37,7 +37,7 @@ public class Rodeur extends Personnage {
     /**
      *Rodeur : gagne son niveau divisé par 2 en agilité.
      *
-     * @param victime
+     * @param victime - qui va recevoir les dommages
      */
     public void attaqueSpeciale(Personnage victime) {
         int bonus = this.getNiveau()/2;
@@ -52,7 +52,7 @@ public class Rodeur extends Personnage {
      *
      * @param agilite l'agilité
      */
-    public  void setAgilite(int agilite){
+    private  void setAgilite(int agilite){
         super.agilite = agilite;
     }
 
