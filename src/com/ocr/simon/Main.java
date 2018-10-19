@@ -1,10 +1,9 @@
 package com.ocr.simon;
 
-import com.ocr.simon.classe.Guerrier;
-import com.ocr.simon.classe.Mage;
-import com.ocr.simon.classe.Personnage;
-import com.ocr.simon.classe.Rodeur;
+import com.ocr.simon.classe.*;
 
+import javax.swing.tree.TreeNode;
+import java.lang.reflect.Field;
 import java.util.Scanner;
 
 public class Main {
@@ -24,10 +23,12 @@ public class Main {
         System.out.println("Création du personnage du Joueur 1" +
                 "\nQuel est votre nom ?");
         j1 = scanner.nextLine();
+        game.demandeCaracJoueur();
         Personnage joueur1 = game.creation(j1);
         System.out.println("Création du personnage du Joueur 2" +
                 "\nQuel est votre nom ?");
         j2 = scanner.nextLine();
+        game.demandeCaracJoueur();
         Personnage joueur2 = game.creation(j2);
 
         while(matchTermine == 1) {
@@ -56,7 +57,6 @@ public class Main {
             }
 
         }
-
 
     }
 }

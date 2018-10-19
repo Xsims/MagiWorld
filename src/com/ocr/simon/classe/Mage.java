@@ -1,7 +1,19 @@
 package com.ocr.simon.classe;
 
+/**
+ * The type Mage.
+ */
 public class Mage extends Personnage {
 
+    /**
+     * Instantiates a new Mage.
+     *
+     * @param niveau       the niveau
+     * @param force        the force
+     * @param intelligence the intelligence
+     * @param agilite      the agilite
+     * @param nom          the nom
+     */
     public Mage(int niveau, int force, int intelligence, int agilite, String nom) {
         super(niveau, force, intelligence, agilite, nom);
         System.out.println("Abracadabra !!! je suis un Mage de niveau " + niveau +
@@ -9,6 +21,10 @@ public class Mage extends Personnage {
 
     }
 
+    /**
+     *
+     * @param victime
+     */
     public void attaqueBasique(Personnage victime){
         victime.setVitalite(victime.vitalite - this.getIntelligence());
         System.out.println(this.getNom() + " utilise Boule de Feu et inflige " + this.getIntelligence() + " dommages." +
@@ -16,7 +32,10 @@ public class Mage extends Personnage {
     }
 
 
-
+    /**
+     *
+     * @param victime
+     */
     public void attaqueSpeciale(Personnage victime) {
         int soin = 0;
         if(this.getVitalite() < (this.getNiveau()*5)) {
