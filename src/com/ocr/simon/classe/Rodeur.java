@@ -24,8 +24,9 @@ public class Rodeur extends Personnage {
     }
 
     /**
+     *Attaque basique : dégats égaux à l'agilité du personnage si c'est un rôdeur
      *
-     * @param victime
+     * @param victime qui va se prendre les dommages de l'attaque
      */
     public void attaqueBasique(Personnage victime){
         victime.setVitalite(victime.vitalite - this.getAgilite());
@@ -34,11 +35,12 @@ public class Rodeur extends Personnage {
     }
 
     /**
+     *Rodeur : gagne son niveau divisé par 2 en agilité.
      *
      * @param victime
      */
     public void attaqueSpeciale(Personnage victime) {
-        int bonus = this.getAgilite()/2;
+        int bonus = this.getNiveau()/2;
         this.setAgilite(this.getAgilite() + bonus);
         System.out.println(this.getNom() + " gagne " + bonus +" agilité ");
 
@@ -46,9 +48,9 @@ public class Rodeur extends Personnage {
 
 
     /**
-     * Set agilite.
+     * Set agilité.
      *
-     * @param agilite the agilite
+     * @param agilite l'agilité
      */
     public  void setAgilite(int agilite){
         super.agilite = agilite;

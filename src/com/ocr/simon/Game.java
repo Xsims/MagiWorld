@@ -8,20 +8,18 @@ import com.ocr.simon.classe.Rodeur;
 import java.lang.reflect.Field;
 import java.util.Scanner;
 
-/**
- * The type Game.
- */
 public class Game {
 
 
-    int matchTermine = 1;
 
+    // Le constructeur lance une partie à chaque instanciation
     public Game() {
         System.out.println("Bienvenue à MagiWorld ! Un monde sanginaire où guerrier, rôdeur et magicien" +
                 "s'affronte pour dominer le monde ! \n ");
 
         String nomJoueur1 = "Joueur 1";
         String nomJoueur2 = "Joueur 2";
+
 
         Personnage joueur1 = this.configure(nomJoueur1);
         Personnage joueur2 = this.configure(nomJoueur2);
@@ -32,6 +30,17 @@ public class Game {
 
     }
 
+
+
+
+    /**
+     * Créé un objet Initialisation qui va
+     * s'occuper de toute la configuration
+     * de notre personnage
+     *
+     * @param joueur - nom du Joueur qui configure son personnage
+     * @return Personnage
+     */
     public Personnage configure(String joueur){
         Initialisation initialisation = new Initialisation();
         joueur = initialisation.demanderNom(joueur);
@@ -39,7 +48,18 @@ public class Game {
         return initialisation.creation(joueur);
         }
 
+
+
+
+    /**
+     * Lance un combat à mort entre 2 joueurs en tour par tour
+     *
+     * @param joueur1 - Personnage du joueur 1
+     * @param joueur2 - Personnage du joueur 1
+     * @return winner - Le nom du gagnant de cette bataille
+     */
     public String combatAMort(Personnage joueur1, Personnage joueur2) {
+        int matchTermine = 1;
         String winner = "";
         Combat attaque = new Combat();
 

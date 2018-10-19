@@ -30,12 +30,19 @@ public abstract class Personnage {
     }
 
     /**
+     *Attaque basique : dégats égaux à :
+     *  - la force du personnage si c'est un guerrier
+     *  - l'intelligence du personnage si c'est un mage
+     *  - l'agilité du personnage si c'est un rôdeur
      *
-     * @param victime
+     * @param victime qui va se prendre les dommages de l'attaque
      */
     public abstract void attaqueBasique(Personnage victime);
 
     /**
+     *Guerrier : inflige 2xforce en dégâts, mais perd la moitié de sa force en vie
+     *Mage : soigne jusqu'à 2xintelligence
+     *Rodeur : gagne son niveau divisé par 2 en agilité.
      *
      * @param victime
      */
@@ -51,7 +58,7 @@ public abstract class Personnage {
 
     /**
      *
-     * @return niveau
+     * @return le niveau du personnage
      */
     public int getNiveau() {
         return niveau;
@@ -59,7 +66,7 @@ public abstract class Personnage {
 
     /**
      *
-     * @return vitalite
+     * @return la vitalité du personnage
      */
     public int getVitalite() {
         return vitalite;
@@ -68,7 +75,7 @@ public abstract class Personnage {
     /**
      * Gets force.
      *
-     * @return the force
+     * @return la force
      */
     public int getForce() {
         return force;
@@ -78,7 +85,7 @@ public abstract class Personnage {
     /**
      * Gets intelligence.
      *
-     * @return the intelligence
+     * @return l'intelligence
      */
     public int getIntelligence() {
         return intelligence;
@@ -87,7 +94,7 @@ public abstract class Personnage {
     /**
      * Gets agilite.
      *
-     * @return the agilite
+     * @return l'agilité
      */
     public int getAgilite() {
         return agilite;
@@ -96,7 +103,7 @@ public abstract class Personnage {
     /**
      * Sets niveau.
      *
-     * @param niveau the niveau
+     * @param niveau
      */
     public void setNiveau(int niveau) {
         this.niveau = niveau;
@@ -105,7 +112,7 @@ public abstract class Personnage {
     /**
      * Sets vitalite.
      *
-     * @param vitalite the vitalite
+     * @param vitalite
      */
     public void setVitalite(int vitalite) {
         this.vitalite = vitalite;

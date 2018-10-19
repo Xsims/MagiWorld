@@ -22,8 +22,9 @@ public class Mage extends Personnage {
     }
 
     /**
+     *Attaque basique : dégats égaux à l'intelligence du personnage si c'est un mage
      *
-     * @param victime
+     * @param victime qui va se prendre les dommages de l'attaque
      */
     public void attaqueBasique(Personnage victime){
         victime.setVitalite(victime.vitalite - this.getIntelligence());
@@ -33,6 +34,7 @@ public class Mage extends Personnage {
 
 
     /**
+     *Mage : soigne jusqu'à 2xintelligence
      *
      * @param victime
      */

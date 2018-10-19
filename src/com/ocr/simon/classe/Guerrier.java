@@ -22,8 +22,9 @@ public class Guerrier extends Personnage{
     }
 
     /**
+     *Attaque basique : dégats égaux à la force du personnage si c'est un guerrier
      *
-     * @param victime
+     * @param victime qui va se prendre les dommages de l'attaque
      */
     public void attaqueBasique(Personnage victime){
         victime.setVitalite(victime.vitalite - this.getForce());
@@ -32,6 +33,7 @@ public class Guerrier extends Personnage{
     }
 
     /**
+     *Guerrier : inflige 2xforce en dégâts, mais perd la moitié de sa force en vie
      *
      * @param victime
      */

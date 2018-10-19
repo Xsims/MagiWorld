@@ -8,12 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         int continuer = 1;
 
+        // Relance le jeu jusqu'à que le joueur décide de quitter
         while(continuer == 1) {
             Game game = new Game();
-
-
 
             continuer = -1;
             Scanner scanner = new Scanner(System.in);

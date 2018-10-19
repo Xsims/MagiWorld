@@ -9,8 +9,8 @@ public class Combat {
     /**
      * Méthode appelée à chaque tour pour attaquer
      *
-     * @param joueurAttaquant le joueur attaquant
-     * @param joueurAttaque   le joueur attaque
+     * @param joueurAttaquant
+     * @param joueurAttaque
      */
     public void combat(Personnage joueurAttaquant, Personnage joueurAttaque){
 

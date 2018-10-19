@@ -13,11 +13,7 @@ public class Initialisation {
     public final static String questionCaracteristique = " du personnage ?";
 
     //Caractéristiques mis à -1 pour éviter que les joueurs choisissent des caractériques < 0
-    int classe = -1;
-    int niveau = -1;
-    int force = -1;
-    int intell = -1;
-    int agi = -1;
+    int classe, niveau, force, intell, agi = -1;
 
     int classeMinimum = 1;
     int classeMaximum = 3;
@@ -41,7 +37,6 @@ public class Initialisation {
         intell = demandeNombre(caracMinimum, niveau - force, "Intelligence" + questionCaracteristique);
         agi = demandeNombre(caracMinimum, niveau - force - intell, "Agilité" + questionCaracteristique);
     }
-
 
 
 
@@ -71,7 +66,7 @@ public class Initialisation {
     /**
      * Méthode appelée pour la création de chaque personnage.
      *
-     * @param nom the nom
+     * @param nom - du joueur
      * @return personnage
      */
     public Personnage creation(String nom){
@@ -96,7 +91,16 @@ public class Initialisation {
     }
 
 
-    public static String demanderNom(String numeroJoueur) {
+
+
+    /**
+     * Demande simplement un nom au joueur pour
+     * la création de son personnage
+     *
+     * @param numeroJoueur - entre le joueur 1 et 2
+     * @return nomDuJoueur défini au clavier par celui-ci
+     */
+    public String demanderNom(String numeroJoueur) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Création du personnage du " + numeroJoueur +
                 "\nQuel est votre nom ?");
